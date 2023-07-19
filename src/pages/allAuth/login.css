@@ -41,13 +41,19 @@
   list-style-type: none;
   padding: 0;
   text-align: left;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgba(96, 48, 150, 0.35);
+  box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.3);
 
 }
 
 .features-list li {
   font-size: 18px;
   margin-bottom: 10px;
-  line-height: 1.2;
+  line-height: 1.6;
 }
 
 .join h2 {
