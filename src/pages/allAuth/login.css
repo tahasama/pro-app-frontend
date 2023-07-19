@@ -1,6 +1,6 @@
 .landing-container {
   text-align: center;
-  margin-top: -50px;
+  margin-top: 20px;
   font-family: Arial, sans-serif;
   color: rgba(185, 240, 240, 0.75);
 }
@@ -13,7 +13,7 @@
 }
 
 .content {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
