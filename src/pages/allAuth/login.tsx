@@ -96,24 +96,26 @@ const Login = () => {
         <div className="flexy">
           <div className="features">
             <h2>Why Choose Our App?</h2>
-            <ul className="features-list">
-              <li>
-                <strong>Adaptability:</strong> Effortlessly adjust to any
-                project scale or type.
-              </li>
-              <li>
-                <strong>Efficiency:</strong> Simplify data management, focus on
-                completing projects on time and within budget.
-              </li>
-              <li>
-                <strong>Real-Time Insights:</strong> Stay informed with
-                up-to-date data and analytics.
-              </li>
-              <li>
-                <strong>Security:</strong> Top-notch measures to keep your
-                information safe.
-              </li>
-            </ul>
+            <div className="features-div">
+              <ul className="features-list">
+                <li>
+                  <strong>Adaptability:</strong> Effortlessly adjust to any
+                  project scale or type.
+                </li>
+                <li>
+                  <strong>Efficiency:</strong> Simplify data management, focus
+                  on completing projects on time and within budget.
+                </li>
+                <li>
+                  <strong>Real-Time Insights:</strong> Stay informed with
+                  up-to-date data and analytics.
+                </li>
+                <li>
+                  <strong>Security:</strong> Top-notch measures to keep your
+                  information safe.
+                </li>
+              </ul>
+            </div>
           </div>
           <div className="join">
             <h2>Join Us Today!</h2>
