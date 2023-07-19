@@ -1,0 +1,28 @@
+/* .css-rtrcn9-MuiTablePagination-root:last-child {
+  padding: 10px;
+} */
+
+.MuiTablePagination-root {
+  padding: 10px !important;
+}
+
+.grid {
+  background-color: rgb(199, 187, 211);
+}
+
+.deleteButton {
+  position: absolute;
+  top: -30px;
+  right: 500px;
+}
+
+.title1 {
+  position: absolute;
+  /* top: 40px; */
+
+  margin-left: 380px;
+}
+
+.underNav {
+  margin-top: 50px;
+}

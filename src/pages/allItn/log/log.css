@@ -1,0 +1,70 @@
+/* .css-rtrcn9-MuiTablePagination-root:last-child {
+  padding: 10px;
+} */
+.log {
+  margin-top: 8px;
+}
+
+.MuiTablePagination-root {
+  padding: 10px !important;
+}
+
+.grid {
+  background-color: rgb(199, 187, 211);
+  height: 450px;
+}
+
+.createDeleteB {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 15px 10px 20px 10px;
+}
+
+/* .deleteB {
+} */
+
+.title1 {
+  position: relative;
+  top: 50px;
+  /* margin-left: 440px; */
+  color: rgba(171, 236, 236, 0.75);
+}
+
+/* .underNav {
+    margin-top: 40px;
+    } */
+.toUp {
+  margin-top: -50px;
+}
+
+.total1 {
+  /* margin-top: 7px !important; */
+  /* font-size: 15.5px !important; */
+  /* margin: 10px 0px 5px 0px !important; */
+  /* padding: 0px 50px !important; */
+  top: 8px;
+
+  padding: 10px !important;
+  font-size: 15px !important;
+  float: left;
+}
+.donwload {
+  top: 10px;
+  padding: 10px !important;
+  font-size: 15px !important;
+  /* left: 550px; */
+  float: right;
+}
+div.ag-row-hover:not(.ag-row-group) div {
+  background: rgba(252, 218, 124, 0.2);
+  text-shadow:
+  /* White glow */ 0 0 7px rgb(246, 255, 194), 0 0 10px #fff,
+    0 0 21px #fff;
+  /* color: white; */
+}
+
+/* div.ag-row-hover .ag-cell-inline-editing div {
+  color: black;
+} */

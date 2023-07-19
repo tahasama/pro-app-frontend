@@ -1,0 +1,55 @@
+.statsPerMonth {
+  position: relative;
+}
+.statsPerMonthFilterButton {
+  padding: 15px 15px;
+  margin: -20px 0px 90px 0px;
+}
+.statsPerMonthFilter {
+  margin-top: 0px;
+  width: 250px;
+  height: 300px;
+  overflow-y: scroll;
+  z-index: 99;
+}
+.hayya:hover {
+  background-color: rgba(143, 171, 228, 0.4);
+  /* opacity: 0.9; */
+  z-index: 1;
+}
+
+/* ::-webkit-scrollbar {
+  width: 5px;
+} */
+/* .statsPerMonthLine {
+  width: 3000px;
+} */
+
+.statsPerMonthLine {
+  position: relative;
+  width: 975px;
+  left: 140px;
+  top: 0px;
+  margin: 0;
+}
+
+.buttonn {
+  position: absolute;
+  left: 749px;
+  top: 50px;
+}
+
+.buttonn1 {
+  position: absolute;
+  left: 1140px;
+  top: 150px;
+  width: 120px;
+  padding: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.MuiTypography-body2 {
+  margin-top: -70px !important;
+}

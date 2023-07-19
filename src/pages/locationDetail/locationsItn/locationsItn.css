@@ -1,0 +1,99 @@
+/* body {
+  background-color: rgba(223, 217, 217, 0.877);
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+  color: rgb(112, 76, 182);
+} */
+
+.cover {
+  width: 80vw;
+  /* background-color: rgb(0, 38, 255); */
+  height: 80vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.locationName {
+  text-align: center;
+}
+
+.itns {
+  float: right;
+  padding: 20px;
+  margin-left: 650px;
+}
+
+.filters {
+  font-size: 15.4px;
+  font-weight: 500;
+  line-height: 28px;
+  cursor: pointer;
+  box-shadow: 3px 2px 7px rgb(224, 220, 220);
+}
+
+.filters:hover {
+  color: blue;
+  background-color: rgb(218, 252, 241);
+  transform: translate(2px);
+}
+
+@media only screen and (min-width: 1210px) {
+  .filters {
+    font-size: 15.4px;
+    font-weight: 500;
+    line-height: 32px;
+    cursor: pointer;
+    box-shadow: 3px 2px 7px rgb(224, 220, 220);
+  }
+}
+
+/* .boxes {
+  margin-top: -80px;
+  margin-right: 380px;
+} */
+
+.linkToItn {
+  cursor: pointer;
+}
+.MuiTimeline-root {
+  padding: 5px;
+  margin: 0 -50px;
+  /* width: 190px; */
+}
+
+.PieDimension {
+  margin: 0;
+  padding: 0;
+  /* height: 20px !important; */
+}
+
+.css-1fe7e6p-MuiTimelineSeparator-root {
+  /* padding: -1px; */
+  margin: -10px;
+}
+.example {
+  overflow-y: scroll; /* Add the ability to scroll */
+  overflow-x: hidden;
+}
+
+/* .example::-webkit-scrollbar {
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: thin;
+} */
+
+.example::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+.example::-webkit-scrollbar-track {
+  background: rgb(203, 239, 248); /* color of the tracking area */
+}
+
+.example::-webkit-scrollbar-thumb {
+  background-color: rgb(146, 146, 187); /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid rgb(146, 146, 187); /* creates padding around scroll thumb */
+}

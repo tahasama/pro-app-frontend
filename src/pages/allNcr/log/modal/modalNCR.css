@@ -1,0 +1,8 @@
+.createButtons {
+  position: absolute;
+  top: 32px !important ;
+  right: -500px;
+}
+.uploadText2 {
+  font-size: 50px;
+}

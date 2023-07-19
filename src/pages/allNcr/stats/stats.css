@@ -1,0 +1,22 @@
+.statsQor {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.statsQorDoughnut {
+  /* margin: 12px 0 12px 70px; */
+  padding: 0px;
+  width: "100%";
+}
+
+/* .statsQorLine {
+  margin: 0 0 0 160px;
+}
+
+
+
+.MuiTypography-body2 {
+  margin-top: -70px !important;
+} */
