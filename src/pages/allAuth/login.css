@@ -24,17 +24,21 @@
 }
 
 .features h2 {
-  font-size: 24px;
+  font-size: 26px;
   color: #0066cc;
   margin-bottom: 10px;
+}
+
+.features {
+  display: flex;
+  align-items: center;
 }
 
 .features ul {
   list-style-type: none;
   padding: 0;
   text-align: left;
-  display: flex;
-  align-items: center;
+
 }
 
 .features-list li {
@@ -44,7 +48,7 @@
 }
 
 .join h2 {
-  font-size: 28px;
+  font-size: 26px;
   color: #0066cc;
   margin-bottom: 20px;
 }
