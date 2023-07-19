@@ -7,11 +7,10 @@ import { locations } from "../../constants/constant";
 
 const FullPlan = () => {
   return (
-    <div>
+    <div className="fullPage">
       <div className="navbar">
         <NavBar />
       </div>
-      {/* <img src={plan} alt="" className="fullPlan" /> */}
 
       <div className="masterPlan">
         {locations.flat().map((i: any) => (
@@ -27,7 +26,7 @@ const FullPlan = () => {
           </div>
         ))}
         <Link to={`../closingWall`} className="closingWall">
-          <p className="wallText">closingWall</p>
+          {/* <p className="wallText">closingWall</p> */}
           <div className="arrow">
             <div className="line"></div>
             <div className="point"></div>

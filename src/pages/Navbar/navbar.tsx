@@ -8,10 +8,21 @@ import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import { Button } from "@mui/material";
+import {
+  Button,
+  CssBaseline,
+  Menu,
+  MenuItem,
+  Tooltip,
+  TooltipProps,
+  tooltipClasses,
+  useMediaQuery,
+} from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
+
 import "./navbar.css";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useAppSelector } from "../../state/hooks";
@@ -48,6 +59,8 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
+  backgroundColor: "rgb(83, 138, 221)",
+  borderRadius: "5px",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
@@ -57,6 +70,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     [theme.breakpoints.up("md")]: {
       width: "20ch",
     },
+  },
+}));
+const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.common.white,
+    color: "rgba(0, 0, 0, 0.87)",
+    boxShadow: theme.shadows[1],
+    fontSize: 16,
   },
 }));
 
@@ -166,48 +189,79 @@ export default function NavBar() {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
+  // const handleMobileMenuClose = () => {
+  //   setMobileMoreAnchorEl(null);
+  // };
 
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
   };
 
-  const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+  // const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+  //   setMobileMoreAnchorEl(event.currentTarget);
+  // };
+
+  const menuId = "primary-search-account-menu";
+  const isMobile = useMediaQuery("(max-width: 1200px)"); // Breakpoint for mobile devices
+
+  // Mobile menu state
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // // Function to handle mobile menu open/close
+  // const handleMobileMenuOpen = () => {
+  //   setMobileMenuOpen(!mobileMenuOpen);
+  // };
+
+  // Function to handle mobile menu open
+  const handleMobileMenuOpen = (event: any) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
-  const menuId = "primary-search-account-menu";
+  // Function to handle mobile menu close
+  const handleMobileMenuClose = () => {
+    setMobileMoreAnchorEl(null);
+  };
 
   return (
-    <Box sx={{ flexGrow: 1 }} className="navBar">
-      <AppBar position="static">
-        <Toolbar>
+    <>
+      <CssBaseline />
+      <AppBar className="navBar">
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          {/* Logo */}
           <img
             src={ico}
             alt="hhh"
             width="3.2%"
-            style={{ margin: "0 20px 0 0", padding: 0, left: 0 }}
+            style={{ margin: "0 10px 0 0", padding: 0, left: 0 }}
           />
-          <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-            <Button color="inherit" sx={{ marginRight: 0 }}>
-              <Typography
-                variant="h6"
-                noWrap
-                component="div"
-                sx={{
-                  display: {
-                    xs: "none",
-                    sm: "block",
-                  },
-                }}
-              >
-                Home
-              </Typography>
-            </Button>
+
+          {/* Home link (Visible on larger screens) */}
+          <Link
+            to="/"
+            style={{
+              textDecoration: "none",
+              color: "inherit",
+              borderRadius: "5px",
+              marginLeft: 4,
+            }}
+          >
+            {!isMobile && (
+              <Button color="inherit" sx={{ marginRight: 0 }}>
+                <Typography variant="h6" noWrap component="div">
+                  Home
+                </Typography>
+              </Button>
+            )}
           </Link>
+
+          {/* Search component (adjust the code as needed) */}
           <Search className="search">
             <form onSubmit={handleSearch}>
               <SearchIconWrapper>
@@ -220,107 +274,170 @@ export default function NavBar() {
               />
             </form>
           </Search>
+
           <Box sx={{ flexGrow: 1 }} />
-          <Link
-            to="../allitn"
-            style={{
-              textDecoration: "none",
-              color: "inherit",
-              margin: "0 12px",
-            }}
-          >
-            <Button color="inherit">Inspections</Button>
-          </Link>
-          <Link
-            to="../allconcrete"
-            style={{
-              textDecoration: "none",
-              color: "inherit",
-              margin: "0 12px",
-            }}
-          >
-            <Button color="inherit">CONCRETE</Button>
-          </Link>
-          <Link
-            to="../allreinforcement"
-            style={{
-              textDecoration: "none",
-              color: "inherit",
-              margin: "0 12px",
-            }}
-          >
-            <Button color="inherit">Material</Button>
-          </Link>{" "}
-          <Link
-            to="../allNcr"
-            style={{
-              textDecoration: "none",
-              color: "inherit",
-              margin: "0 12px",
-            }}
-          >
-            <Button color="inherit">Conformities</Button>
-          </Link>{" "}
-          <Link
-            to="../allQor"
-            style={{
-              textDecoration: "none",
-              color: "inherit",
-              margin: "0 12px",
-            }}
-          >
-            <Button color="inherit">observations</Button>
-          </Link>
-          <Link
-            to="../allLab"
-            style={{
-              textDecoration: "none",
-              color: "inherit",
-              margin: "0 12px",
-            }}
-          >
-            <Button color="inherit">Docs&nbsp;/&nbsp;Lab</Button>
-          </Link>
-          <Box sx={{ display: { xs: "flex", md: "none", marginRight: 3 } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </Box>
-          <Button
-            color="inherit"
-            startIcon={<AccountCircleIcon />}
-            sx={{
-              margin: "0 18px",
-              textTransform: "lowercase",
-              xs: "flex",
-              md: "none",
-            }}
-          >
-            {email}
-          </Button>
-          {user && (
+
+          {/* Menu items (Visible on larger screens) */}
+          {!isMobile ? (
+            <>
+              <Link
+                to="../allitn"
+                style={{
+                  color: "inherit",
+                  borderRadius: "5px",
+                  marginLeft: 4,
+                }}
+              >
+                <Button color="inherit">Inspections</Button>
+              </Link>
+              <Link
+                to="../allconcrete"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  borderRadius: "5px",
+                  marginLeft: 4,
+                }}
+              >
+                <Button color="inherit">CONCRETE</Button>
+              </Link>
+              <Link
+                to="../allreinforcement"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  borderRadius: "5px",
+                  marginLeft: 4,
+                }}
+              >
+                <Button color="inherit">Material</Button>
+              </Link>{" "}
+              <Link
+                to="../allNcr"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  borderRadius: "5px",
+                  marginLeft: 4,
+                }}
+              >
+                <Button color="inherit">Conformities</Button>
+              </Link>{" "}
+              <Link
+                to="../allQor"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  borderRadius: "5px",
+                  marginLeft: 4,
+                }}
+              >
+                <Button color="inherit">observations</Button>
+              </Link>
+              <Link
+                to="../allLab"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  borderRadius: "5px",
+                  marginLeft: 4,
+                }}
+              >
+                <Button color="inherit">Docs&nbsp;/&nbsp;Lab</Button>
+              </Link>
+            </>
+          ) : (
+            // Mobile menu button (visible on mobile screens)
+            <>
+              <Box sx={{ display: { xs: "flex", md: "flex", marginRight: 3 } }}>
+                <IconButton
+                  size="large"
+                  aria-label="show more"
+                  aria-haspopup="true"
+                  onClick={handleMobileMenuOpen}
+                  color="inherit"
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Menu
+                  anchorEl={mobileMoreAnchorEl}
+                  open={Boolean(mobileMoreAnchorEl)}
+                  onClose={handleMobileMenuClose}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                >
+                  {/* Add menu items for mobile screens here */}
+                  <MenuItem onClick={handleMobileMenuClose}>
+                    <Link
+                      to="../allitn"
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                      Inspections
+                    </Link>
+                  </MenuItem>
+                  <MenuItem onClick={handleMobileMenuClose}>
+                    <Link
+                      to="../allconcrete"
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                      Concrete
+                    </Link>
+                  </MenuItem>
+                  <MenuItem onClick={handleMobileMenuClose}>
+                    <Link
+                      to="../allreinforcement"
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                      Material
+                    </Link>
+                  </MenuItem>
+                  {/* Add other menu items for mobile screens here */}
+                </Menu>
+              </Box>
+            </>
+          )}
+
+          {/* User information (Visible on larger screens) */}
+          {!isMobile && (
             <Button
-              variant="contained"
-              color="secondary"
-              startIcon={<LogoutIcon />}
-              className="barbar"
-              onClick={() => {
-                signOut(auth);
-                console.log("logged out");
-                navigate("/register");
+              color="inherit"
+              startIcon={<AccountCircleIcon />}
+              sx={{
+                margin: "0 18px",
+                textTransform: "lowercase",
               }}
             >
-              Logout
+              {email}
             </Button>
+          )}
+
+          {/* Logout button (Visible on larger screens and if the user is logged in) */}
+          {user && !isMobile && (
+            <LightTooltip title="Logout">
+              <LogoutIcon
+                style={{
+                  cursor: "pointer",
+                  backgroundColor: "purple",
+                  borderRadius: 4,
+                  fontSize: 36,
+                  padding: 5,
+                }}
+                onClick={() => {
+                  signOut(auth);
+                  console.log("logged out");
+                  navigate("/register");
+                }}
+              />
+            </LightTooltip>
           )}
         </Toolbar>
       </AppBar>
-    </Box>
+    </>
   );
 }
