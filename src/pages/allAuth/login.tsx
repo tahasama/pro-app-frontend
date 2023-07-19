@@ -93,67 +93,70 @@ const Login = () => {
         <h1 className="title">
           Streamline Your Construction Projects with Our Data Management App
         </h1>
-        <div className="features">
-          <h2>Why Choose Our App?</h2>
-          <ul className="features-list">
-            <li>
-              <strong>Adaptability:</strong> Effortlessly adjust to any project
-              scale or type.
-            </li>
-            <li>
-              <strong>Efficiency:</strong> Simplify data management, focus on
-              completing projects on time and within budget.
-            </li>
-            <li>
-              <strong>Real-Time Insights:</strong> Stay informed with up-to-date
-              data and analytics.
-            </li>
-            <li>
-              <strong>Security:</strong> Top-notch measures to keep your
-              information safe.
-            </li>
-          </ul>
-        </div>
-        <div className="join">
-          <h2>Join Us Today!</h2>
-          {/* <p className="join-text">
+        <div className="flexy">
+          <div className="features">
+            <h2>Why Choose Our App?</h2>
+            <ul className="features-list">
+              <li>
+                <strong>Adaptability:</strong> Effortlessly adjust to any
+                project scale or type.
+              </li>
+              <li>
+                <strong>Efficiency:</strong> Simplify data management, focus on
+                completing projects on time and within budget.
+              </li>
+              <li>
+                <strong>Real-Time Insights:</strong> Stay informed with
+                up-to-date data and analytics.
+              </li>
+              <li>
+                <strong>Security:</strong> Top-notch measures to keep your
+                information safe.
+              </li>
+            </ul>
+          </div>
+          <div className="join">
+            <h2>Join Us Today!</h2>
+            {/* <p className="join-text">
             Experience the power of adaptive data management!
           </p> */}
-          <div className="register-container">
-            <form className="login-form" onSubmit={handleSubmit}>
-              <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input type="email" name="email" ref={emailRef} />
-              </div>
-              <div className="form-group">
-                <label htmlFor="password">Password</label>
-                <input type="password" name="password" ref={passwordRef} />
-              </div>
-              <div className="login-buttons">
-                <button type="submit" className="login-button">
-                  Login
-                </button>
-                <button
-                  type="button"
-                  className="login-button google"
-                  onClick={LoginGoogle}
-                >
-                  Login with Google
-                </button>
-              </div>
+            <div className="register-container">
+              <form className="login-form" onSubmit={handleSubmit}>
+                <div className="form-group">
+                  <label htmlFor="email">Email</label>
+                  <input type="email" name="email" ref={emailRef} />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="password">Password</label>
+                  <input type="password" name="password" ref={passwordRef} />
+                </div>
+                <div className="login-buttons">
+                  <button type="submit" className="login-button">
+                    Login
+                  </button>
+                  <button
+                    type="button"
+                    className="login-button google"
+                    onClick={LoginGoogle}
+                  >
+                    Login with Google
+                  </button>
+                </div>
 
-              {status !== "unauthorized" && (
-                <p className="forgot-password">
-                  <Link to="/reset-password">Forgot password?</Link>
+                {status !== "unauthorized" && (
+                  <p className="forgot-password">
+                    <Link to="/reset-password">Forgot password?</Link>
+                  </p>
+                )}
+                <p className="signup">
+                  Don't have an account? <Link to="/register">SignUp</Link>
                 </p>
-              )}
-              <p className="signup">
-                Don't have an account? <Link to="/register">SignUp</Link>
-              </p>
-            </form>
-            {err && <p className="error-message">{err.message}</p>}
+              </form>
+              {err && <p className="error-message">{err.message}</p>}
+            </div>
           </div>
         </div>
+
         <p className="support">
           Got questions? Contact us at{" "}
           <a href="mailto:support@constructionapp.com">

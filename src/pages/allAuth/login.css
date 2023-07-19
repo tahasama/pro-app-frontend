@@ -5,6 +5,10 @@
   color: rgba(185, 240, 240, 0.75);
 }
 
+.flexy{
+  display: flex;
+}
+
 .content {
   max-width: 800px;
   margin: 0 auto;
