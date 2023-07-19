@@ -9,11 +9,11 @@
   display: flex;
   width: 100%;
   margin: 0 30px;
-  gap: 10;
+  gap: 5;
 }
 
 .content {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -33,6 +33,8 @@
   list-style-type: none;
   padding: 0;
   text-align: left;
+  display: flex;
+  align-items: center;
 }
 
 .features-list li {
