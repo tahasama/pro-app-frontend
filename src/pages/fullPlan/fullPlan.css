@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  background-color: #0fa;
+  /* background-color: #0fa; */
 }
 
 .masterPlan {
@@ -27,8 +27,8 @@
   width: 9.4%;
   height: 17.5%;
   position: absolute;
-  bottom: 11.8%;
-  left: 17.6%;
+  bottom: 12.8%;
+  left: 19%;
   border-radius: 100%;
     background-color: rgb(152, 0, 203);
 
@@ -64,10 +64,10 @@
   width: 9.4%;
   height: 17.5%;
   position: absolute;
-  bottom: 11.8%;
-  left: 32.8%;
+  bottom: 12.8%;
+  left: 33.4%;
   border-radius: 100%;
-    background-color: rgb(152, 0, 203);
+  background-color: rgb(152, 0, 203);
 
   opacity: .3;
 }
@@ -98,8 +98,8 @@
   width: 9.4%;
   height: 17.5%;
   position: absolute;
-  bottom: 37%;
-  left: 32.8%;
+  bottom: 36.5%;
+  left: 33.4%;
   border-radius: 100%;
     background-color: rgb(152, 0, 203);
 
@@ -133,8 +133,8 @@
   width: 7%;
   height: 12%;
   position: absolute;
-  bottom: 40%;
-  right: 16%;
+  bottom: 38.5%;
+  right: 17.5%;
   border-radius: 100%;
     background-color: rgb(152, 0, 203);
 
@@ -167,8 +167,8 @@
   width: 7%;
   height: 12%;
   position: absolute;
-  bottom: 26%;
-  right: 16%;
+  bottom: 25.5%;
+  right: 17.5%;
   border-radius: 100%;
   background-color: rgb(152, 0, 203);
 
@@ -201,10 +201,10 @@
   width: 7%;
   height: 12%;
   position: absolute;
-  bottom: 13%;
-  right: 16%;
+  bottom: 12.5%;
+  right: 17.5%;
   border-radius: 100%;
-    background-color: rgb(152, 0, 203);
+  background-color: rgb(152, 0, 203);
 
   opacity: .3;
 }
@@ -268,8 +268,8 @@
   width: 8%;
   height: 18%;
   position: absolute;
-  bottom: 18.2%;
-  left: 6.5%;
+  bottom: 18.4%;
+  left: 8.5%;
   border-radius: 5%;
     background-color: rgb(152, 0, 203);
 
@@ -303,7 +303,7 @@
   height: 6%;
   position: absolute;
   bottom: 36%;
-  left: 6.5%;
+  left: 8.5%;
   border-radius: 5%;
   background-color: #00d9ff;
   opacity: .5;
@@ -335,8 +335,8 @@
   width: 7%;
   height: 15%;
   position: absolute;
-  bottom: 42.2%;
-  left: 6.5%;
+  bottom: 42%;
+  left: 8.5%;
   border-radius: 5%;
     background-color: rgb(152, 0, 203);
 
@@ -370,7 +370,7 @@
   height: 4.5%;
   position: absolute;
   bottom: 33.5%;
-  left: 19%;
+  left: 20%;
   border-radius: 5%;
   background-color: rgb(152, 0, 203);
   opacity: .3;
@@ -403,7 +403,7 @@
   height: 5%;
   position: absolute;
   bottom: 28%;
-  right: 28.3%;
+  right: 28.6%;
   border-radius: 5%;
   background-color: rgb(152, 0, 203);
   opacity: .3;
@@ -435,8 +435,8 @@
   width: 8%;
   height: 10%;
   position: absolute;
-  bottom: 40.2%;
-  left: 19%;
+  bottom: 40%;
+  left: 20%;
   border-radius: 5%;
   background-color: #00d9ff;
   opacity: .3;
@@ -468,8 +468,8 @@
   width: 6%;
   height: 5%;
   position: absolute;
-  bottom: 50.2%;
-  right: 29%;
+  bottom: 50%;
+  right: 29.5%;
   border-radius: 5%;
   background-color: #00d9ff;
   opacity: .3;
@@ -502,7 +502,7 @@
   height: 10%;
   position: absolute;
   bottom: 45.2%;
-  left: 15.7%;
+  left: 16.7%;
   border-radius: 5%;
   background-color: rgb(152, 0, 203);
   opacity: .3;
@@ -535,7 +535,7 @@
   height: 7%;
   position: absolute;
   bottom: 48.6%;
-  right: 35.1%;
+  right: 35.8%;
   border-radius: 5%;
     background-color: rgb(152, 0, 203);
 
@@ -569,7 +569,7 @@
   height: 9.5%;
   position: absolute;
   bottom: 62.6%;
-  left: 6.5%;
+  left: 8.5%;
   border-radius: 5%;
   background-color: #00d9ff;
   opacity: .3;
@@ -602,7 +602,7 @@
   height: 9.5%;
   position: absolute;
   bottom: 62.6%;
-  left: 38.5%;
+  left: 39%;
   border-radius: 5%;
   background-color: #00d9ff;
   opacity: .3;
@@ -667,10 +667,9 @@
   height: 9.3%;
   position: absolute;
   bottom: 12.3%;
-  right: 26.5%;
+  right: 27.5%;
   border-radius: 5%;
-    background-color: rgb(152, 0, 203);
-
+  background-color: rgb(152, 0, 203);
   opacity: .3;
 }
 .preliminaryTreatment:hover {

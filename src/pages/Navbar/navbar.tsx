@@ -397,6 +397,30 @@ export default function NavBar() {
                       Material
                     </Link>
                   </MenuItem>
+                  <MenuItem onClick={handleMobileMenuClose}>
+                    <Link
+                      to="../allncr"
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                      Conformities
+                    </Link>
+                  </MenuItem>
+                  <MenuItem onClick={handleMobileMenuClose}>
+                    <Link
+                      to="../allqor"
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                      Observations
+                    </Link>
+                  </MenuItem>
+                  <MenuItem onClick={handleMobileMenuClose}>
+                    <Link
+                      to="../allLab"
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                      Doc / Lab
+                    </Link>
+                  </MenuItem>
                   {/* Add other menu items for mobile screens here */}
                 </Menu>
               </Box>
