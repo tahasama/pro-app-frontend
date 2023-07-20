@@ -1,37 +1,31 @@
-import plan from "../../images/plan.png";
 import { Link } from "react-router-dom";
-
 import "./fullPlan.css";
 import NavBar from "../Navbar/navbar";
-import { locations } from "../../constants/constant";
+import plan from "../../images/plan.png";
 
 const FullPlan = () => {
+  // Replace with the actual dimensions of your image
+  const YOUR_IMAGE_WIDTH = 4065;
+  const YOUR_IMAGE_HEIGHT = 2281;
+
+  // Replace with your desired percentage values
+  const desiredTopPercentage = (500 / YOUR_IMAGE_HEIGHT) * 100;
+  const desiredLeftPercentage = (500 / YOUR_IMAGE_WIDTH) * 100;
+
   return (
     <div className="fullPage">
       <div className="navbar">
-        <NavBar />
+        {" "}
+        <NavBar />{" "}
       </div>
 
       <div className="masterPlan">
-        {locations.flat().map((i: any) => (
-          <div key={i}>
-            <Link to={`../${i}`} className={i}></Link>
-            <div className={"name-" + i}>
-              <i>
-                <b>
-                  <u>{i}</u>
-                </b>
-              </i>
-            </div>
+        <img src={plan} alt="" className="masterPlan" />
+        <div key="secondaryClarifierP24">
+          <div className="secondaryClarifierP24">
+            {/* Your secondaryClarifierP24 content */}
           </div>
-        ))}
-        <Link to={`../closingWall`} className="closingWall">
-          {/* <p className="wallText">closingWall</p> */}
-          <div className="arrow">
-            <div className="line"></div>
-            <div className="point"></div>
-          </div>
-        </Link>
+        </div>
       </div>
     </div>
   );
