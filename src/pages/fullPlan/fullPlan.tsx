@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./fullPlan.css";
 import NavBar from "../Navbar/navbar";
 import plan from "../../images/plan.png";
+import Box from "@mui/material/Box";
 
 const FullPlan = () => {
   // Replace with the actual dimensions of your image
@@ -15,18 +16,17 @@ const FullPlan = () => {
   return (
     <div className="fullPage">
       <div className="navbar">
-        {" "}
         <NavBar />{" "}
       </div>
 
-      <div className="masterPlan">
+      <Box className="masterPlan">
         <img src={plan} alt="" className="masterPlan" />
         <div key="secondaryClarifierP24">
           <div className="secondaryClarifierP24">
             {/* Your secondaryClarifierP24 content */}
           </div>
         </div>
-      </div>
+      </Box>
     </div>
   );
 };

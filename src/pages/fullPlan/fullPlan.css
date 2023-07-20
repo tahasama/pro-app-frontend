@@ -11,13 +11,13 @@
 
 
   /* background-color: red; */
-  width: 87%;
+  width: 95%;
   height: auto;  
   /* width: 85%;
   height: 85%; */
   position: relative;
   box-sizing: border-box;
-  /* top: 16px; */
+  top: 6px;
 
 }
 
@@ -27,8 +27,8 @@
   height: 17.5%;
   /* background-color: blue; */
   position: absolute;
-  bottom: 7.5%;
-  left: 20%;
+  bottom: 8.8%;
+  left: 17.8%;
   border-radius: 100%;
   box-shadow: 0 0 10px rgb(30, 30, 220), 0 0 20px rgb(30, 30, 220), 0 0 30px rgb(30, 30, 220);
 
