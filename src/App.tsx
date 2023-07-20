@@ -40,11 +40,11 @@ function App() {
   }, [uid]);
 
   return (
-    <div className="all">
-      <div className="smallScreen">
+    <div className="">
+      {/* <div className="smallScreen">
         This App is exclusively available on PC on Full Screen. Please use your
         Laptop for an efficient experience
-      </div>
+      </div> */}
       <div className="App">
         <BrowserRouter>
           <Routes>

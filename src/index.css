@@ -10,6 +10,13 @@ body {
   /* display: flex; */
   /* justify-content: center; */
   align-items: center;
+  
+  background: linear-gradient(
+    90deg,
+    rgb(5, 1, 78) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgb(99, 6, 153) 100%
+  );
 }
 
 code {

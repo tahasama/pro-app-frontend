@@ -14,7 +14,7 @@ export const locations = [
   "sandFilter",
   "preliminaryTreatment",
   "blowersRoom",
-  "closingWall",
+  // "closingWall",
   "mainStation",
   "electricalRoom1",
   "electricalRoom2",

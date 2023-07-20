@@ -1,19 +1,4 @@
-.App {
-  text-align: center;
 
-}
-
-body {
-  /* background-color: rgba(32, 90, 141, 0.404) !important; */
-
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgb(5, 1, 78) 0%,
-    rgba(9, 9, 121, 1) 35%,
-    rgb(99, 6, 153) 100%
-  );
-}
 
 .dev {
   position: fixed;
