@@ -196,6 +196,19 @@ const Login = () => {
                   </Link>
                 </Typography>
               </form>
+              {err && (
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: "red", // Set the text color to red
+                    fontSize: "16px", // Adjust the font size
+                    marginTop: "8px", // Add some top margin for spacing
+                    // You can add more CSS properties here as needed
+                  }}
+                >
+                  {err.message}
+                </Typography>
+              )}
             </Paper>
           </Box>
           <Box order={{ xs: 2, md: 1 }}>

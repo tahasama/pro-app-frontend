@@ -470,7 +470,7 @@ export default function NavBar() {
                 onClick={() => {
                   signOut(auth);
                   console.log("logged out");
-                  navigate("/login");
+                  navigate("/register");
                 }}
               />
             </LightTooltip>
