@@ -16,13 +16,8 @@ const FullPlan = () => {
       <Box
         className="masterPlan"
         sx={{
-          mt: { sx: 0, sm: 8, md: 6, lg: -1 },
-          transform: {
-            sx: "scale(.9)",
-            sm: "scale(1)",
-            md: "scale(1)",
-            lg: "scale(.85)",
-          },
+          mt: { xs: 28, sm: 8, md: 6, lg: -1 },
+          transform: { xs: "rotate(-90deg) scale(1.4)", sm: "rotate(0deg)" },
         }}
       >
         <img

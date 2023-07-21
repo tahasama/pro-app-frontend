@@ -41,36 +41,33 @@ const Search = styled("div")(({ theme }) => ({
   marginRight: theme.spacing(2),
   marginLeft: 0,
   width: "100%",
-  [theme.breakpoints.up("sm")]: {
+  [theme.breakpoints.up("md")]: {
     marginLeft: theme.spacing(3),
     width: "auto",
   },
+  [theme.breakpoints.up("xs")]: {
+    marginLeft: 50,
+    width: "240px",
+  },
 }));
 
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
+const SearchIconWrapper = styled("div")({
+  padding: 10,
   position: "absolute",
   pointerEvents: "none",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-}));
+});
 
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
+const SearchInput = styled("input")(({ theme }) => ({
   color: "inherit",
-  backgroundColor: "rgb(83, 138, 221)",
-  borderRadius: "5px",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "20ch",
-    },
-  },
+  border: "none",
+  outline: "none",
+  background: "transparent",
+  width: "80%",
+  padding: "8px 10px",
+  fontSize: "1rem",
 }));
 const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -235,13 +232,14 @@ export default function NavBar() {
           }}
         >
           {/* Logo */}
-          <img
-            src={ico}
-            alt="hhh"
-            width="3.2%"
-            style={{ margin: "0 10px 0 0", padding: 0, left: 0 }}
-          />
-
+          {!isMobile && (
+            <img
+              src={ico}
+              alt="hhh"
+              width="35vw"
+              style={{ margin: "0 10px 0 0", padding: 0, left: 0 }}
+            />
+          )}
           {/* Home link (Visible on larger screens) */}
           <Link
             to="/"
@@ -260,21 +258,20 @@ export default function NavBar() {
               </Button>
             )}
           </Link>
-
           {/* Search component (adjust the code as needed) */}
           <Search className="search">
+            {/* Search component (adjust the code as needed) */}
             <form onSubmit={handleSearch}>
-              <SearchIconWrapper>
+              <SearchIconWrapper sx={{ mt: -0.5 }}>
                 <SearchIcon />
               </SearchIconWrapper>
-              <input
-                placeholder="e.g < at > for aeration tank"
+              <SearchInput
+                placeholder={!isMobile ? "ex 'at' for aerationTank" : "search"}
                 ref={searchRef}
-                className="Winput"
+                sx={{ ml: 3.5 }}
               />
             </form>
           </Search>
-
           <Box sx={{ flexGrow: 1 }} />
 
           {/* Menu items (Visible on larger screens) */}
@@ -349,13 +346,24 @@ export default function NavBar() {
           ) : (
             // Mobile menu button (visible on mobile screens)
             <>
-              <Box sx={{ display: { xs: "flex", md: "flex", marginRight: 3 } }}>
+              <Box
+                sx={{
+                  display: {
+                    xs: "flex",
+                    md: "flex",
+                    marginRight: 3,
+                    position: "absolute",
+                    left: 0,
+                  },
+                }}
+              >
                 <IconButton
                   size="large"
                   aria-label="show more"
                   aria-haspopup="true"
                   onClick={handleMobileMenuOpen}
                   color="inherit"
+                  sx={{ transform: "scale(1.5)", ml: 1 }}
                 >
                   <MenuIcon />
                 </IconButton>
@@ -373,6 +381,14 @@ export default function NavBar() {
                   }}
                 >
                   {/* Add menu items for mobile screens here */}
+                  <MenuItem onClick={handleMobileMenuClose}>
+                    <Link
+                      to="../"
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                      Home
+                    </Link>
+                  </MenuItem>
                   <MenuItem onClick={handleMobileMenuClose}>
                     <Link
                       to="../allitn"
@@ -426,7 +442,6 @@ export default function NavBar() {
               </Box>
             </>
           )}
-
           {/* User information (Visible on larger screens) */}
           {!isMobile && (
             <Button
@@ -440,9 +455,8 @@ export default function NavBar() {
               {email}
             </Button>
           )}
-
           {/* Logout button (Visible on larger screens and if the user is logged in) */}
-          {user && !isMobile && (
+          {user && (
             <LightTooltip title="Logout">
               <LogoutIcon
                 style={{
@@ -452,10 +466,11 @@ export default function NavBar() {
                   fontSize: 36,
                   padding: 5,
                 }}
+                sx={{ right: 0, position: "relative" }}
                 onClick={() => {
                   signOut(auth);
                   console.log("logged out");
-                  navigate("/register");
+                  navigate("/login");
                 }}
               />
             </LightTooltip>

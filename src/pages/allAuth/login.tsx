@@ -14,6 +14,7 @@ import { useState } from "react";
 
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
+import { Box, Button, Grid, Paper, TextField, Typography } from "@mui/material";
 
 const Login = () => {
   const emailRef = useRef<any>(null);
@@ -23,6 +24,7 @@ const Login = () => {
   const { err } = useAppSelector(getAuthData);
   const [alerto, setAlerto] = useState(true);
   const { status, uid, user } = useAppSelector(getAuthData);
+  console.log("🚀 ~ file: login.tsx:27 ~ Login ~ user:", user);
   // console.log("rrrrrrrrr", user.email);
   useEffect(() => {
     dispatch(getUser(uid));
@@ -47,6 +49,12 @@ const Login = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    console.log(
+      "ddddddddddddd",
+      emailRef.current.value,
+      "kkkkkkkkkkk",
+      passwordRef.current.value
+    );
     try {
       dispatch(updateError(""));
       dispatch(
@@ -87,87 +95,167 @@ const Login = () => {
   // ==============================================================
 
   return (
-    <div className="landing-container">
-      {alerto && status !== undefined && status !== "" && authorization}
-      <div className="content">
-        <h1 className="title">
+    <Box
+      textAlign="center"
+      mt={4}
+      fontFamily="Roboto, Arial, sans-serif"
+      color="rgba(185, 240, 240, 0.75)"
+    >
+      <Box mx="auto" p={0} maxWidth="800px" width="90vw">
+        <Typography fontSize={{ xs: 24, md: 28 }} gutterBottom>
           Streamline Your Construction Projects with Our Data Management App
-        </h1>
-        <div className="flexy">
-          <div className="features">
-            <h2>Why Choose Our App?</h2>
-            <div className="features-div">
-              <ul className="features-list">
+        </Typography>
+        <Box
+          component="div"
+          display="grid"
+          gridTemplateColumns={{ xs: "1fr", sm: "1fr 1fr" }}
+          gap={{ xs: 8, sm: 3 }}
+          mt={6}
+        >
+          <Box order={{ xs: 1, md: 2 }}>
+            <Paper
+              elevation={3}
+              sx={{
+                p: 3,
+                borderRadius: 10,
+                backgroundColor: "rgba(96, 48, 150, 0.35)",
+                height: "100%",
+              }}
+            >
+              <Typography variant="h5" color="primary.light" gutterBottom>
+                Join Us Today!
+              </Typography>
+              <form
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "10px",
+                }}
+                onSubmit={handleSubmit}
+              >
+                <TextField
+                  fullWidth
+                  label="Email"
+                  variant="filled"
+                  type="email"
+                  size="small"
+                  sx={{ mt: 1 }}
+                  inputProps={{
+                    style: {
+                      border: "none",
+                      paddingTop: 24,
+                      paddingBottom: 16,
+                      backgroundColor: "#9fa8da",
+                    },
+                  }} // Remove the border inside the input
+                  inputRef={emailRef}
+                />
+                <TextField
+                  fullWidth
+                  label="Password"
+                  variant="filled"
+                  type="password"
+                  size="small"
+                  sx={{ mt: 1 }}
+                  inputProps={{
+                    style: {
+                      border: "none",
+                      paddingTop: 24,
+                      paddingBottom: 16,
+                      backgroundColor: "#9fa8da",
+                    },
+                  }} // Remove the border inside the input
+                  inputRef={passwordRef}
+                />
+
+                <Button
+                  variant="contained"
+                  type="submit"
+                  color="primary"
+                  sx={{ mt: 1 }}
+                >
+                  Login
+                </Button>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  sx={{ mt: 1 }}
+                  onClick={LoginGoogle}
+                >
+                  Login with Google
+                </Button>
+                <Typography sx={{ mt: 1 }}>
+                  <Link to="/reset-password" style={{ color: "#0277bd" }}>
+                    Forgot password?
+                  </Link>
+                </Typography>
+                <Typography sx={{ mt: 1 }} color={"#bdbdbd"}>
+                  Don't have an account?{" "}
+                  <Link to="/register" style={{ color: "white" }}>
+                    Sign Up
+                  </Link>
+                </Typography>
+              </form>
+            </Paper>
+          </Box>
+          <Box order={{ xs: 2, md: 1 }}>
+            <Paper
+              elevation={3}
+              sx={{
+                p: 3,
+                borderRadius: 10,
+                backgroundColor: "rgba(96, 48, 150, 0.35)",
+                height: "100%",
+              }}
+            >
+              <Typography variant="h5" color="primary.light" gutterBottom>
+                Why Choose Our App?
+              </Typography>
+              <ul
+                style={{
+                  listStyleType: "none",
+                  padding: 0,
+                  color: "#e1f5fe",
+                  textAlign: "left",
+                }}
+              >
                 <li>
-                  <strong>Adaptability:</strong> Effortlessly adjust to any
-                  project scale or type.
+                  <Typography variant="body1" lineHeight={2}>
+                    <strong>Adaptability:</strong> Effortlessly adjust to any
+                    project scale or type.
+                  </Typography>
                 </li>
                 <li>
-                  <strong>Efficiency:</strong> Simplify data management, focus
-                  on completing projects on time and within budget.
+                  <Typography variant="body1" lineHeight={2}>
+                    <strong>Efficiency:</strong> Simplify data management, focus
+                    on completing projects on time and within budget.
+                  </Typography>
                 </li>
                 <li>
-                  <strong>Real-Time Insights:</strong> Stay informed with
-                  up-to-date data and analytics.
+                  <Typography variant="body1" lineHeight={2}>
+                    <strong>Real-Time Insights:</strong> Stay informed with
+                    up-to-date data and analytics.
+                  </Typography>
                 </li>
                 <li>
-                  <strong>Security:</strong> Top-notch measures to keep your
-                  information safe.
+                  <Typography variant="body1" lineHeight={2}>
+                    <strong>Security:</strong> Top-notch measures to keep your
+                    information safe.
+                  </Typography>
                 </li>
               </ul>
-            </div>
-          </div>
-          <div className="join">
-            <h2>Join Us Today!</h2>
-            {/* <p className="join-text">
-            Experience the power of adaptive data management!
-          </p> */}
-            <div className="register-container">
-              <form className="login-form" onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <label htmlFor="email">Email</label>
-                  <input type="email" name="email" ref={emailRef} />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="password">Password</label>
-                  <input type="password" name="password" ref={passwordRef} />
-                </div>
-                <div className="login-buttons">
-                  <button type="submit" className="login-button">
-                    Login
-                  </button>
-                  <button
-                    type="button"
-                    className="login-button google"
-                    onClick={LoginGoogle}
-                  >
-                    Login with Google
-                  </button>
-                </div>
-
-                {status !== "unauthorized" && (
-                  <p className="forgot-password">
-                    <Link to="/reset-password">Forgot password?</Link>
-                  </p>
-                )}
-                <p className="signup">
-                  Don't have an account? <Link to="/register">SignUp</Link>
-                </p>
-              </form>
-              {err && <p className="error-message">{err.message}</p>}
-            </div>
-          </div>
-        </div>
-
-        <p className="support">
+            </Paper>
+          </Box>
+        </Box>
+        <Typography mt={10}>
           Got questions? Contact us at{" "}
-          <a href="mailto:support@constructionapp.com">
+          <Link to="mailto:support@constructionapp.com">
             support@constructionapp.com
-          </a>{" "}
+          </Link>{" "}
           or call (123) 456-7890.
-        </p>
-      </div>
-    </div>
+        </Typography>
+      </Box>
+    </Box>
   );
 };
 
