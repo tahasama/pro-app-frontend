@@ -420,7 +420,10 @@ const Log = () => {
     <div className="log" style={{ marginTop: 30 }}>
       <h2
         className="title1"
-        style={{ marginBottom: status === "authorized" ? 110 : 0 }}
+        style={{
+          marginBottom: status === "authorized" ? 110 : 0,
+          textAlign: "center",
+        }}
       >
         INSPECTION TEST NOTIFICATIONS
       </h2>

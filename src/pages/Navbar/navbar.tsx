@@ -223,7 +223,7 @@ export default function NavBar() {
   return (
     <>
       <CssBaseline />
-      <AppBar className="navBar">
+      <AppBar className="navBar" style={{ height: 60 }}>
         <Toolbar
           sx={{
             display: "flex",
