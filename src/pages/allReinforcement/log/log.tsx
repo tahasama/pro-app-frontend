@@ -279,9 +279,11 @@ const Log = () => {
                 ></AgGridReact>
               </div>
             </div>{" "}
-            <Button variant="contained" className="total" style={{ left: -40 }}>
+            <Button variant="contained" className="total" style={{ left: 0 }}>
               <p>
-                TOTAL = {totalreinforcement}
+                TOTAL{" "}
+                <i style={{ textTransform: "lowercase" }}>(reinforcement)</i> ={" "}
+                {totalreinforcement}
                 <i style={{ textTransform: "lowercase" }}>&nbsp;Kg</i>
               </p>
             </Button>

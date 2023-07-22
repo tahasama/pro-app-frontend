@@ -400,24 +400,24 @@ const StatsPerMonth = () => {
         backgroundColor: "#00ff00",
         tension: 0.3,
       },
-      {
-        label: "sandFilter",
-        // data: !q.includes("sandFilter") ? [0] : uu12,
-        data: uu12,
+      // {
+      //   label: "sandFilter",
+      //   // data: !q.includes("sandFilter") ? [0] : uu12,
+      //   data: uu12,
 
-        borderColor: "#ff33cc",
-        backgroundColor: "#ff33cc",
-        tension: 0.3,
-      },
-      {
-        label: "pre Treatment",
-        // data: !q.includes("preliminaryTreatment") ? [0] : uu13,
-        data: uu13,
+      //   borderColor: "#ff33cc",
+      //   backgroundColor: "#ff33cc",
+      //   tension: 0.3,
+      // },
+      // {
+      //   label: "pre Treatment",
+      //   // data: !q.includes("preliminaryTreatment") ? [0] : uu13,
+      //   data: uu13,
 
-        borderColor: "#e0c3cc",
-        backgroundColor: "#e0c3cc",
-        tension: 0.3,
-      },
+      //   borderColor: "#e0c3cc",
+      //   backgroundColor: "#e0c3cc",
+      //   tension: 0.3,
+      // },
       {
         label: "C.Wall",
         // data: !q.includes("preliminaryTreatment") ? [0] : uu13,
@@ -427,51 +427,51 @@ const StatsPerMonth = () => {
         backgroundColor: "#2fc3cc",
         tension: 0.3,
       },
-      {
-        label: "Blowers.R",
-        // data: !q.includes("preliminaryTreatment") ? [0] : uu13,
-        data: uu15,
+      // {
+      //   label: "Blowers.R",
+      //   // data: !q.includes("preliminaryTreatment") ? [0] : uu13,
+      //   data: uu15,
 
-        borderColor: "#2d93cc",
-        backgroundColor: "#2d93cc",
-        tension: 0.3,
-      },
-      {
-        label: "M.Station",
-        // data: !q.includes("preliminaryTreatment") ? [0] : uu13,
-        data: uu16,
+      //   borderColor: "#2d93cc",
+      //   backgroundColor: "#2d93cc",
+      //   tension: 0.3,
+      // },
+      // {
+      //   label: "M.Station",
+      //   // data: !q.includes("preliminaryTreatment") ? [0] : uu13,
+      //   data: uu16,
 
-        borderColor: "#8003cc",
-        backgroundColor: "#8003cc",
-        tension: 0.3,
-      },
-      {
-        label: "Electrical.R1",
-        // data: !q.includes("preliminaryTreatment") ? [0] : uu13,
-        data: uu17,
+      //   borderColor: "#8003cc",
+      //   backgroundColor: "#8003cc",
+      //   tension: 0.3,
+      // },
+      // {
+      //   label: "Electrical.R1",
+      //   // data: !q.includes("preliminaryTreatment") ? [0] : uu13,
+      //   data: uu17,
 
-        borderColor: "#dd03cc",
-        backgroundColor: "#dd03cc",
-        tension: 0.3,
-      },
-      {
-        label: "Electrical.R2",
-        // data: !q.includes("preliminaryTreatment") ? [0] : uu13,
-        data: uu18,
+      //   borderColor: "#dd03cc",
+      //   backgroundColor: "#dd03cc",
+      //   tension: 0.3,
+      // },
+      // {
+      //   label: "Electrical.R2",
+      //   // data: !q.includes("preliminaryTreatment") ? [0] : uu13,
+      //   data: uu18,
 
-        borderColor: "#a103cc",
-        backgroundColor: "#a103cc",
-        tension: 0.3,
-      },
-      {
-        label: "WaterPipe.Net",
-        // data: !q.includes("preliminaryTreatment") ? [0] : uu13,
-        data: uu19,
+      //   borderColor: "#a103cc",
+      //   backgroundColor: "#a103cc",
+      //   tension: 0.3,
+      // },
+      // {
+      //   label: "WaterPipe.Net",
+      //   // data: !q.includes("preliminaryTreatment") ? [0] : uu13,
+      //   data: uu19,
 
-        borderColor: "#bd039c",
-        backgroundColor: "#bd039c",
-        tension: 0.3,
-      },
+      //   borderColor: "#bd039c",
+      //   backgroundColor: "#bd039c",
+      //   tension: 0.3,
+      // },
       {
         label: "Sludge.Treat",
         // data: !q.includes("preliminaryTreatment") ? [0] : uu13,
@@ -481,24 +481,24 @@ const StatsPerMonth = () => {
         backgroundColor: "#ffffff",
         tension: 0.3,
       },
-      {
-        label: "Digester1",
-        // data: !q.includes("preliminaryTreatment") ? [0] : uu13,
-        data: uu21,
+      // {
+      //   label: "Digester1",
+      //   // data: !q.includes("preliminaryTreatment") ? [0] : uu13,
+      //   data: uu21,
 
-        borderColor: "#A78fff",
-        backgroundColor: "#A78fff",
-        tension: 0.3,
-      },
-      {
-        label: "Digester2",
-        // data: !q.includes("preliminaryTreatment") ? [0] : uu13,
-        data: uu22,
+      //   borderColor: "#A78fff",
+      //   backgroundColor: "#A78fff",
+      //   tension: 0.3,
+      // },
+      // {
+      //   label: "Digester2",
+      //   // data: !q.includes("preliminaryTreatment") ? [0] : uu13,
+      //   data: uu22,
 
-        borderColor: "#6AD7A0",
-        backgroundColor: "#6AD7A0",
-        tension: 0.3,
-      },
+      //   borderColor: "#6AD7A0",
+      //   backgroundColor: "#6AD7A0",
+      //   tension: 0.3,
+      // },
     ],
   };
 
@@ -511,10 +511,24 @@ const StatsPerMonth = () => {
     responsive: true,
     plugins: {
       legend: {
-        display: false,
+        position: "right" as const,
+        display: true,
+        labels: {
+          color: "#cfe0e3", // Set the font color for the legend labels
+          top: 5,
+          font: {
+            size: 16, // Set the font size for the legend labels
+          },
+        },
       },
       title: {
         display: false,
+        text: "Inspection for every location",
+
+        font: {
+          size: 24,
+          weight: "bold",
+        },
       },
     },
     barThickness: 5.5,
@@ -544,53 +558,19 @@ const StatsPerMonth = () => {
         <Box
           display={"flex"}
           flexDirection={"row"}
-          justifyContent={"space-between"}
+          justifyContent={"center"}
           alignItems={"center"}
-          mt={2}
-          gap={6}
+          borderBottom="2px solid #BADA55" /* Yellow-green-gray border color */
+          borderRadius={8} /* Optional: Rounded corners for a nicer look */
+          paddingX={3} /* Optional: Add some padding for better spacing */
+          paddingY={1}
+          color={"#BADA55"}
+          width={"fit"}
         >
-          <Box
-            display={"flex"}
-            flexDirection={"row"}
-            justifyContent={"left"}
-            alignItems={"center"}
-            borderBottom="2px solid #BADA55" /* Yellow-green-gray border color */
-            borderRadius={8} /* Optional: Rounded corners for a nicer look */
-            paddingX={3} /* Optional: Add some padding for better spacing */
-            paddingY={1}
-            color={"#BADA55"}
-          >
-            <TipsAndUpdatesIcon fontSize="large" />
-            <Typography variant="body1" style={{ marginLeft: "10px" }}>
-              Click on a location to show/hide it on the chart
-            </Typography>
-          </Box>
-          <Box
-            display={"flex"}
-            flexDirection={"row"}
-            justifyContent={"left"}
-            alignItems={"center"}
-            borderBottom="2px solid #BADA55" /* Yellow-green-gray border color */
-            borderRadius={8} /* Optional: Rounded corners for a nicer look */
-            paddingX={3} /* Optional: Add some padding for better spacing */
-            paddingY={1}
-            color={"#BADA55"}
-          >
-            <TipsAndUpdatesIcon fontSize="large" />
-            <Typography variant="body1" style={{ marginLeft: "10px" }}>
-              Click on the button above to switch between Line and Bar charts
-            </Typography>
-          </Box>
-        </Box>
-        <Box textAlign={"center"} padding={2}>
-          <Button
-            onClick={() => setLineBar(!lineBar)}
-            variant="contained"
-            color="secondary"
-            sx={{ px: 7, py: 2 }}
-          >
-            Switch
-          </Button>
+          <TipsAndUpdatesIcon fontSize="large" />
+          <Typography variant="body1" style={{ marginLeft: "10px" }}>
+            Click on a location to show/hide it on the chart
+          </Typography>
         </Box>
       </Box>
       <Box
@@ -599,11 +579,16 @@ const StatsPerMonth = () => {
           transform: { lg: "scale(.87)" },
         }}
       >
-        {lineBar ? (
-          <Bar data={data} options={optionsLine} />
-        ) : (
-          <Line data={data} options={optionsLine} />
-        )}
+        <Typography
+          variant="h5"
+          gutterBottom
+          color="primary.light"
+          mb={{ sx: 0, md: 7 }}
+          textAlign={{ sx: "left", md: "left" }}
+        >
+          Inspection for every location :
+        </Typography>
+        <Line data={data} options={optionsLine} />
       </Box>
     </Box>
   );
