@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import { Button, Card } from "@mui/material";
+import { Box, Button, Card, Grid, Typography } from "@mui/material";
 import TipsAndUpdatesIcon from "@mui/icons-material/TipsAndUpdates";
 import { getAllItns, itnData } from "../../../../state";
 import { useAppDispatch, useAppSelector } from "../../../../state/hooks";
@@ -14,7 +14,7 @@ import {
   LineElement,
   Title,
 } from "chart.js";
-import { Bar, Line } from "react-chartjs-2";
+import { Bar, Bubble, Line, Pie, Radar, Scatter } from "react-chartjs-2";
 import "./statsPerMonth.css";
 import { labelsName, locations } from "../../../../constants/constant";
 
@@ -35,20 +35,6 @@ const StatsPerMonth = () => {
   useEffect(() => {
     dispatch(getAllItns());
   }, [all]);
-  const optionsLine = {
-    // responsive: true,
-    // maintainAspectRatio: true,
-    plugins: {
-      legend: {
-        position: "top" as const,
-      },
-      title: {
-        display: true,
-        text: "Inspection for every location",
-        font: { size: 18 },
-      },
-    },
-  };
 
   const labels: any = [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
@@ -521,95 +507,105 @@ const StatsPerMonth = () => {
   //   key ? setQ([...q, w]) : setQ(q.filter((t: any) => t !== w));
   // };
 
+  const optionsLine = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+      title: {
+        display: false,
+      },
+    },
+    barThickness: 5.5,
+    scales: {
+      x: {
+        ticks: {
+          color: "#2ac50f", // Set the color of the X-axis labels (months names)
+          font: {
+            size: 15, // Set the font size of the X-axis labels
+          },
+        },
+      },
+      y: {
+        ticks: {
+          color: "#2ac50f", // Set the color of the Y-axis tick marks
+          font: {
+            size: 15, // Set the font size of the X-axis labels
+          },
+        },
+      },
+    },
+  };
+
   return (
-    <div className="statsPerMonth">
-      {/* <div className="statsPerMonthFilterButton">
-        <div>
-          {filters ? (
-            <Button variant="contained" onClick={() => setFilters(!filters)}>
-              Hide Filters
-            </Button>
-          ) : (
-            <Button variant="contained" onClick={() => setFilters(!filters)}>
-              Show Filters
-            </Button>
-          )}
-        </div>
-        <div
-          className="statsPerMonthFilter"
-          style={{
-            backgroundColor: "rgb(210,215,230,0.8)",
-            color: "#000033",
-          }}
+    <Box>
+      <Box mt={6}>
+        <Box
+          display={"flex"}
+          flexDirection={"row"}
+          justifyContent={"space-between"}
+          alignItems={"center"}
+          mt={2}
+          gap={6}
         >
-          {filters && (
-            <FormGroup>
-              {locations.map((xgonna: any) => (
-                <FormControlLabel
-                  className="hayya"
-                  key={xgonna}
-                  control={
-                    <Checkbox
-                      name={xgonna}
-                      defaultChecked
-                      onChange={(e: any, key: any) => handleCheckBox(e, key)}
-                      style={{
-                        padding: 5,
-                        marginLeft: 10,
-                      }}
-                    />
-                  }
-                  label={xgonna}
-                />
-              ))}
-            </FormGroup>
-          )}
-        </div>
-      </div> */}
-      <Button
-        variant="contained"
-        className="buttonn"
-        color="error"
-        onClick={() => setLineBar(!lineBar)}
+          <Box
+            display={"flex"}
+            flexDirection={"row"}
+            justifyContent={"left"}
+            alignItems={"center"}
+            borderBottom="2px solid #BADA55" /* Yellow-green-gray border color */
+            borderRadius={8} /* Optional: Rounded corners for a nicer look */
+            paddingX={3} /* Optional: Add some padding for better spacing */
+            paddingY={1}
+            color={"#BADA55"}
+          >
+            <TipsAndUpdatesIcon fontSize="large" />
+            <Typography variant="body1" style={{ marginLeft: "10px" }}>
+              Click on a location to show/hide it on the chart
+            </Typography>
+          </Box>
+          <Box
+            display={"flex"}
+            flexDirection={"row"}
+            justifyContent={"left"}
+            alignItems={"center"}
+            borderBottom="2px solid #BADA55" /* Yellow-green-gray border color */
+            borderRadius={8} /* Optional: Rounded corners for a nicer look */
+            paddingX={3} /* Optional: Add some padding for better spacing */
+            paddingY={1}
+            color={"#BADA55"}
+          >
+            <TipsAndUpdatesIcon fontSize="large" />
+            <Typography variant="body1" style={{ marginLeft: "10px" }}>
+              Click on the button above to switch between Line and Bar charts
+            </Typography>
+          </Box>
+        </Box>
+        <Box textAlign={"center"} padding={2}>
+          <Button
+            onClick={() => setLineBar(!lineBar)}
+            variant="contained"
+            color="secondary"
+            sx={{ px: 7, py: 2 }}
+          >
+            Switch
+          </Button>
+        </Box>
+      </Box>
+      <Box
+        width={"100%"}
+        sx={{
+          transform: { lg: "scale(.87)" },
+        }}
       >
-        to {lineBar ? "Line" : "Bar"} Chart
-      </Button>
-      <Card className="buttonn1">
-        <TipsAndUpdatesIcon color="warning" />
-        click on the button above to switch from Dohgnut Bar chart to Line chart
-        and vice versa
-      </Card>
-      <Card className="buttonn1" style={{ marginTop: 150 }}>
-        <TipsAndUpdatesIcon color="warning" /> click on a location to show/hide
-        it on the chart
-      </Card>
-      {lineBar ? (
-        <div className="statsPerMonthLine">
-          <Bar
-            options={optionsLine}
-            data={data}
-            style={{
-              //   marginTop: -20,
-              //   marginRight: 80,
-              backgroundColor: "rgb(210,215,230,0.9)",
-              //   width: "1400px",
-            }}
-          />
-        </div>
-      ) : (
-        <div className="statsPerMonthLine">
-          <Line
-            options={optionsLine}
-            data={data}
-            style={{
-              //   marginTop: -20,
-              backgroundColor: "rgb(210,215,230,0.9)",
-              //   width: "1400px",
-            }}
-          />
-        </div>
-      )}
-    </div>
+        {lineBar ? (
+          <Bar data={data} options={optionsLine} />
+        ) : (
+          <Line data={data} options={optionsLine} />
+        )}
+      </Box>
+    </Box>
   );
 };
 
