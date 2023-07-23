@@ -165,7 +165,7 @@ const Login = () => {
                   Login with Google
                 </Button>
                 <Typography sx={{ mt: 1 }}>
-                  <Link to="/reset-password" style={{ color: "#0277bd" }}>
+                  <Link to="/reset-password" style={{ color: "#1589cf" }}>
                     Forgot password?
                   </Link>
                 </Typography>
@@ -242,10 +242,13 @@ const Login = () => {
         </Box>
         <Typography mt={10}>
           Got questions? Contact us at{" "}
-          <Link to="mailto:support@constructionapp.com">
+          <Link
+            to="mailto:support@constructionapp.com"
+            style={{ color: "#0ABAB5" }}
+          >
             support@constructionapp.com
           </Link>{" "}
-          or call (123) 456-7890.
+          or call (+212) XXX-0987.
         </Typography>
       </Box>
     </Box>
