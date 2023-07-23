@@ -203,7 +203,7 @@ const Log = () => {
   };
 
   return (
-    <div className="log1" style={{ marginTop: 30 }}>
+    <div className="" style={{ marginTop: 30 }}>
       <h2
         className="title1"
         style={{ marginBottom: status === "authorized" ? 110 : 0 }}
@@ -212,21 +212,24 @@ const Log = () => {
       </h2>
 
       {status === "manager" && (
-        <div className="createDeleteB">
+        <Box
+          display={"flex"}
+          gap={1}
+          justifyContent={"space-between"}
+          marginY={2}
+        >
           <ModalN />
-          <div>
-            <Button
-              variant="outlined"
-              color="error"
-              size="large"
-              className="deleteB"
-              onClick={handleDelete}
-              style={{ borderColor: "tomato", color: "tomato" }}
-            >
-              Delete selected
-            </Button>
-          </div>
-        </div>
+          <Button
+            variant="outlined"
+            color="error"
+            size="large"
+            className="deleteB"
+            onClick={handleDelete}
+            style={{ borderColor: "tomato", color: "tomato" }}
+          >
+            Delete selected
+          </Button>
+        </Box>
       )}
 
       <div
@@ -287,14 +290,6 @@ const Log = () => {
                 <i style={{ textTransform: "lowercase" }}>&nbsp;Kg</i>
               </p>
             </Button>
-            {/* <Button
-              variant="contained"
-              color="inherit"
-              style={{ position: "relative", float: "left" }}
-              onClick={() => setShowother(!showother)}
-            >
-              All w/o RIR
-            </Button> */}
           </>
         ) : (
           <Box

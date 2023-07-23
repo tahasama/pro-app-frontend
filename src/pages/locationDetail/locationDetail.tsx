@@ -98,7 +98,7 @@ const LocationDetails = () => {
       )}
 
       {/* Main Content */}
-      <Box sx={{ p: 3, mt: -5 }}>
+      <Box sx={{ p: 3, mt: 0 }}>
         <Box>
           {/* Render content based on selected tab */}
           {value === 0 && <LocationsItn />}

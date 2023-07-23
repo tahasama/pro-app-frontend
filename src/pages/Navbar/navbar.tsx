@@ -233,12 +233,22 @@ export default function NavBar() {
         >
           {/* Logo */}
           {!isMobile && (
-            <img
-              src={ico}
-              alt="hhh"
-              width="35vw"
-              style={{ margin: "0 10px 0 0", padding: 0, left: 0 }}
-            />
+            <Link
+              to="/"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                borderRadius: "5px",
+                marginLeft: 4,
+              }}
+            >
+              <img
+                src={ico}
+                alt="hhh"
+                width="35vw"
+                style={{ margin: "0 10px 0 0", padding: 0, left: 0 }}
+              />
+            </Link>
           )}
           {/* Home link (Visible on larger screens) */}
           <Link

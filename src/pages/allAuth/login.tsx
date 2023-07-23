@@ -28,7 +28,8 @@ const Login = () => {
   // console.log("rrrrrrrrr", user.email);
   useEffect(() => {
     dispatch(getUser(uid));
-  }, []);
+    uid && navigate("/fullPlan");
+  }, [uid]);
 
   if (err.code === "auth/user-not-found") {
     dispatch(updateError("wrong email, please try again"));
@@ -49,12 +50,6 @@ const Login = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log(
-      "ddddddddddddd",
-      emailRef.current.value,
-      "kkkkkkkkkkk",
-      passwordRef.current.value
-    );
     try {
       dispatch(updateError(""));
       dispatch(
@@ -78,21 +73,6 @@ const Login = () => {
       ? navigate("/fullPlan")
       : navigate("/");
   }, [status, user]);
-
-  const authorization = (
-    // <Alert
-    //   severity="success"
-    //   style={{ alignItems: "center", justifyContent: "center" }}
-    // >
-    //   <AlertTitle>Your inscription will be examined</AlertTitle>
-    //   youl receive a confirmation email of subscription very shortly, if you are
-    //   an authorized member you will receive another email ginving you access to
-    //   the app, Thank you for your patience.
-    // </Alert>
-    <div>ok</div>
-  );
-
-  // ==============================================================
 
   return (
     <Box

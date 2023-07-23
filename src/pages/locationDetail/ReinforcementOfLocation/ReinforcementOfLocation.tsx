@@ -261,7 +261,7 @@ const ReinforcementOfLocation = () => {
         <Button
           variant="contained"
           style={{
-            marginTop: 30,
+            marginBottom: 2,
             cursor: "auto",
             fontSize: "1rem",
             borderRadius: "8px",

@@ -212,7 +212,7 @@ const ConcreteOfLocation = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        marginTop: 68,
+        marginTop: 20,
       }}
     >
       {/* Table */}

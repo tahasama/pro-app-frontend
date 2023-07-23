@@ -228,9 +228,15 @@ const LocationsItn = () => {
   };
 
   return (
-    <Grid container columnSpacing={{ xs: 1, md: 2, lg: 3 }} mt={5}>
+    <Grid
+      container
+      columnSpacing={{ xs: 1, md: 2, lg: 3 }}
+      rowSpacing={{ xs: 2.5, md: 0 }}
+      mt={30}
+    >
       <Grid item xs={12} sm={6} md={4}>
         <Paper
+          elevation={5}
           style={{
             backgroundColor: "transparent",
             width: "100%",
@@ -238,6 +244,7 @@ const LocationsItn = () => {
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "column",
+            padding: 2,
           }}
         >
           <Typography variant="h6" component="p" color={"GrayText"}>
@@ -252,7 +259,10 @@ const LocationsItn = () => {
         </Paper>
       </Grid>
       <Grid item xs={12} sm={6} md={3}>
-        <Paper style={{ backgroundColor: "transparent" }}>
+        <Paper
+          elevation={5}
+          style={{ backgroundColor: "transparent", padding: 4 }}
+        >
           <Typography variant="h6" component="p" color={"GrayText"}>
             Filter By:
           </Typography>
@@ -291,7 +301,9 @@ const LocationsItn = () => {
             display: "flex",
             justifyContent: "center",
             // alignItems: "center",
+            padding: 5,
           }}
+          elevation={5}
         >
           <Timeline
             position="alternate"
