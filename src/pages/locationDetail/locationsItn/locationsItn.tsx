@@ -240,7 +240,7 @@ const LocationsItn = () => {
             flexDirection: "column",
           }}
         >
-          <Typography variant="h6" component="p">
+          <Typography variant="h6" component="p" color={"GrayText"}>
             Stats:
           </Typography>
           <Box width={"73%"}>
@@ -253,7 +253,9 @@ const LocationsItn = () => {
       </Grid>
       <Grid item xs={12} sm={6} md={3}>
         <Paper style={{ backgroundColor: "transparent" }}>
-          <Typography variant="body1">Filter By:</Typography>
+          <Typography variant="h6" component="p" color={"GrayText"}>
+            Filter By:
+          </Typography>
           <ul style={{ listStyleType: "none", padding: 0 }}>
             {routines.map((routine, index) => (
               <li key={index}>
@@ -305,7 +307,7 @@ const LocationsItn = () => {
               .reverse()
               .map((itn: any) => (
                 <TimelineItem key={itn._id}>
-                  <TimelineOppositeContent color="text.secondary">
+                  <TimelineOppositeContent color="yellowgreen">
                     {new Date(itn.dateOfInspection).toLocaleDateString(
                       navigator.language,
                       { year: "numeric", month: "short", day: "numeric" }

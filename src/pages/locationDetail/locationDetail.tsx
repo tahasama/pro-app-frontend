@@ -72,12 +72,6 @@ const LocationDetails = () => {
         <NavBar />
       </div>
 
-      {status === "manager" && (
-        <div style={{ position: "absolute", bottom: 100, left: 3, zIndex: 99 }}>
-          <ModalC />
-        </div>
-      )}
-
       {/* Tabs */}
       <Tabs
         orientation="horizontal"
@@ -96,6 +90,12 @@ const LocationDetails = () => {
         <Tab label="Concrete" />
         <Tab label="Reinforcement" />
       </Tabs>
+
+      {status === "manager" && (
+        <div style={{ position: "fixed", bottom: 20, right: 20, zIndex: 99 }}>
+          <ModalC />
+        </div>
+      )}
 
       {/* Main Content */}
       <Box sx={{ p: 3, mt: -5 }}>
