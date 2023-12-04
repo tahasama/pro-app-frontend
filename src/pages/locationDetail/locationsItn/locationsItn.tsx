@@ -335,7 +335,7 @@ const LocationsItn = () => {
                       style={{ cursor: "pointer" }}
                     >
                       <Typography fontSize={{ xs: 14, sm: 17 }} color="white">
-                        QW211101-SNCE-QA-ITN-{handleNumber(itn.num)}
+                        DM2023-OKY-AQ-DOC-{handleNumber(itn.num)}
                       </Typography>
                       <Typography
                         variant="h6"

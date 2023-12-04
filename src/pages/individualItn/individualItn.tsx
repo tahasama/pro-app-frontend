@@ -61,7 +61,7 @@ const IndividualItn = () => {
             INSPECTION TEST NOTIFICATION
           </Typography>
           <Typography variant="h5" align="center" gutterBottom color={"pink"}>
-            QW211101-SNCE-QA-ITN-{handleNumber(individualItn.num)}
+            DM2023-OKY-AQ-DOC-{handleNumber(individualItn.num)}
           </Typography>
         </Grid>
 
