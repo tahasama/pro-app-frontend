@@ -200,7 +200,7 @@ export default function NavBar() {
   // };
 
   const menuId = "primary-search-account-menu";
-  const isMobile = useMediaQuery("(max-width: 1200px)"); // Breakpoint for mobile devices
+  const isMobile = useMediaQuery("(max-width: 800px)"); // Breakpoint for mobile devices
 
   // Mobile menu state
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -261,7 +261,7 @@ export default function NavBar() {
             }}
           >
             {!isMobile && (
-              <Button color="inherit" sx={{ marginRight: 0 }}>
+              <Button color="inherit" sx={{ marginRight: 0, fontSize: 20 }}>
                 <Typography variant="h6" noWrap component="div">
                   Home
                 </Typography>
@@ -454,16 +454,18 @@ export default function NavBar() {
           )}
           {/* User information (Visible on larger screens) */}
           {!isMobile && (
-            <Button
-              color="inherit"
-              startIcon={<AccountCircleIcon />}
-              sx={{
-                margin: "0 18px",
-                textTransform: "lowercase",
-              }}
-            >
-              {email}
-            </Button>
+            <LightTooltip title={email}>
+              <AccountCircleIcon
+                style={{
+                  cursor: "pointer",
+                  // backgroundColor: "rebeccapurple",
+                  borderRadius: 4,
+                  fontSize: 36,
+                  padding: 5,
+                  margin: 5,
+                }}
+              />
+            </LightTooltip>
           )}
           {/* Logout button (Visible on larger screens and if the user is logged in) */}
           {user && (
@@ -472,7 +474,7 @@ export default function NavBar() {
                 style={{
                   cursor: "pointer",
                   backgroundColor: "purple",
-                  borderRadius: 4,
+                  borderRadius: 25,
                   fontSize: 36,
                   padding: 5,
                 }}

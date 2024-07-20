@@ -83,7 +83,7 @@ const Login = () => {
     >
       <Box mx="auto" p={0} maxWidth="800px" width="90vw">
         <Typography fontSize={{ xs: 24, md: 28 }} gutterBottom>
-          Streamline Your Construction Projects with Our Data Management App
+          Streamline Your Construction Projects with Our Data Management App!
         </Typography>
         <Box
           component="div"
